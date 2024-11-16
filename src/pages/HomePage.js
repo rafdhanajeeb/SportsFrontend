@@ -45,7 +45,7 @@ const HomePage = () => {
               />
               {isDropdownOpen && (
                 <div className="dropdown-menu">
-                  <a href="/profile">View Profile</a>
+                  <a href="/profile">Edit {userData.name}</a>
                   <button onClick={handleLogout}>Logout</button>
                 </div>
               )}

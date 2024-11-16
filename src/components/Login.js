@@ -42,7 +42,7 @@ const Login = () => {
         setIsLoggedIn(true);
         console.log(result.user);
         setUserData(result.user); // Assuming `result.user` contains the user data
-        navigate('/');
+        navigate('/home');
         // Optionally, redirect to HomePage or update UI based on the response
         // For example, redirect to HomePage (if using React Router):
         // history.push('/home');

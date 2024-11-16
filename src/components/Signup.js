@@ -123,6 +123,7 @@ const Signup = () => {
                     </div>
 
                     <div className="sports-interests">
+                        <legend>Choose your sports interests:</legend>
                         <label>
                             <input
                                 type="checkbox"
@@ -146,6 +147,22 @@ const Signup = () => {
                                 onChange={handleCheckboxChange}
                             />
                             Tennis
+                        </label>
+                        <label>
+                            <input
+                                type="checkbox"
+                                value="Tennis"
+                                onChange={handleCheckboxChange}
+                            />
+                            Cricket
+                        </label>
+                        <label>
+                            <input
+                                type="checkbox"
+                                value="Tennis"
+                                onChange={handleCheckboxChange}
+                            />
+                            Swimming
                         </label>
                     </div>
 
