@@ -1,17 +1,35 @@
-import React, { createContext, useState, useContext } from 'react';
+import React, { createContext, useState, useEffect, useContext } from 'react';
 
-// Create Context
 const AuthContext = createContext();
 
-// Create a custom hook to use the auth context
 export const useAuth = () => {
   return useContext(AuthContext);
 };
 
-// Create a Provider component
 export const AuthProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userData, setUserData] = useState(null);
+
+  // Load user data from localStorage on initialization
+  useEffect(() => {
+    const storedUserData = localStorage.getItem('userData');
+    const storedIsLoggedIn = localStorage.getItem('isLoggedIn');
+    if (storedUserData && storedIsLoggedIn === 'true') {
+      setUserData(JSON.parse(storedUserData));
+      setIsLoggedIn(true);
+    }
+  }, []);
+
+  // Update localStorage whenever userData or isLoggedIn changes
+  useEffect(() => {
+    if (isLoggedIn) {
+      localStorage.setItem('userData', JSON.stringify(userData));
+      localStorage.setItem('isLoggedIn', 'true');
+    } else {
+      localStorage.removeItem('userData');
+      localStorage.setItem('isLoggedIn', 'false');
+    }
+  }, [userData, isLoggedIn]);
 
   return (
     <AuthContext.Provider value={{ isLoggedIn, setIsLoggedIn, userData, setUserData }}>

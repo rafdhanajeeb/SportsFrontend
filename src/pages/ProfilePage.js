@@ -1,30 +1,41 @@
-import React, { useState, useEffect } from 'react';
-import { useAuth } from '../context/AuthContext'; // Assuming you have this context set up
+import React, { useState,useEffect } from 'react';
+import { useAuth } from '../context/AuthContext';
 import '../styles/ProfilePage.css';
 
 const ProfilePage = () => {
-  const { userData } = useAuth(); // Access user data from AuthContext
+  const { userData } = useAuth();
+
+  // Initialize state outside of conditional logic
+  const [fullName, setFullName] = useState(userData?.name || '');
+  const [companyEmail, setCompanyEmail] = useState(userData?.email || '');
+  const [username, setUsername] = useState(userData?.name || '');
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [oldPassword, setOldPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
 
-  // Set initial values based on userData
-  const [fullName, setFullName] = useState(userData?.name || ''); 
-  const [companyEmail, setCompanyEmail] = useState(userData?.email || ''); 
-  const [username, setUsername] = useState(userData?.name || ''); // Assuming username is the same as name or set separately
-    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  // Log userData to check if it is available
-  useEffect(() => {
-    console.log('userdata from ProfilePage:', userData);
+    useEffect(() => {
+    console.log('UserData in ProfilePage:', userData);
     if (userData) {
       setFullName(userData.name);
       setCompanyEmail(userData.email);
-      setUsername(userData.name); // You can change this if the username is different
+      setUsername(userData.name);
     }
-  }, [userData]); // Re-run this effect whenever userData changes
+  }, [userData]);
+
+  // Handle user not logged in
+  if (!userData) {
+    return (
+      <div className="not-logged-in">
+        <p>Please log in to view your profile.</p>
+      </div>
+    );
+  }
 
   const handleSaveNewPassword = () => {
     if (oldPassword && newPassword) {
       alert('Password updated successfully!');
+      setOldPassword('');
+      setNewPassword('');
     } else {
       alert('Please fill in both old and new password fields.');
     }
@@ -33,6 +44,7 @@ const ProfilePage = () => {
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
+
   const handleJoinGroup = (sport) => {
     alert(`Joining ${sport} group...`);
   };
@@ -50,7 +62,7 @@ const ProfilePage = () => {
       <div className="navbar">
         <div className="logo">
           <a href="/index">
-            <img src={require('../images/AL.png')}  alt="Logo" />
+            <img src={require('../images/AL.png')} alt="Logo" />
           </a>
         </div>
         <div className="menu">
@@ -61,18 +73,18 @@ const ProfilePage = () => {
         </div>
         <div className="profile">
           <div className="profile-dropdown">
-              <img 
-                src={require('../images/profile.png')} 
-                alt="Profile" 
-                onClick={toggleDropdown} 
-                className="profile-img"
-              />
-              {isDropdownOpen && (
-                <div className="dropdown-menu">
-                  <a href="/">Back Home</a>
-                </div>
-              )}
-            </div>
+            <img
+              src={require('../images/profile.png')}
+              alt="Profile"
+              onClick={toggleDropdown}
+              className="profile-img"
+            />
+            {isDropdownOpen && (
+              <div className="dropdown-menu">
+                <a href="/">Back Home</a>
+              </div>
+            )}
+          </div>
         </div>
       </div>
 
@@ -80,7 +92,7 @@ const ProfilePage = () => {
         <div className="section" id="personalInfo">
           <h2>Personal Information</h2>
           <div className="profile-image-container">
-            <img src="Images/profile.png" alt="User Profile" />
+            <img src={require('../images/profile.png')} alt="User Profile" />
             <div>
               <label htmlFor="fullName">Full Name</label>
               <input type="text" id="fullName" value={fullName} readOnly />

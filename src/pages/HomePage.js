@@ -7,13 +7,16 @@ const HomePage = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const handleLogout = () => {
-    // Clear user data and log out
-    setUserData(null);
-    setIsLoggedIn(false);
-    // Optionally, clear token from localStorage/sessionStorage if used
-    localStorage.removeItem('authToken'); 
-    alert('Logged out successfully!');
-  };
+  // Clear user data and log out
+  setUserData(null);
+  setIsLoggedIn(false);
+  
+  // Clear data from localStorage
+  localStorage.removeItem('userData');
+  localStorage.setItem('isLoggedIn', 'false');
+  
+  alert('Logged out successfully!');
+};
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
