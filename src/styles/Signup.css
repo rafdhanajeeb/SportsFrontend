@@ -1,0 +1,253 @@
+/* Add your CSS from the previous code here */
+.topbar img {
+    width: 50px;
+    height: 50px;
+    margin-right: 290px;
+    margin-left: 50px;
+    justify-content: left;
+}
+
+.btn,
+.bt2 {
+    align-self: center;
+}
+
+.btn button {
+    background-color: rgba(196, 0, 29, 0.8);
+    font-family: Optima;
+    border: none;
+    padding: 7px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 17px;
+    position: absolute;
+    right: 1%;
+    top: 1.3%;
+}
+
+.btn2 button {
+    background-color: rgb(197, 0, 30, 0.8);
+    font-family: Optima;
+    border: none;
+    padding: 7px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 17px;
+    position: absolute;
+    right: 8.5%;
+    top: 1.3%;
+}
+
+button:hover {
+    opacity: 75%;
+}
+main {
+    margin-top: 115px;
+    padding: 2rem;
+}
+/* Body Section */
+.mainbody {
+    background-color: black;
+}
+
+.heroImg,
+.loginBg {
+    background-image: url('../images/ChessHome.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.loginBg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: inherit;
+    background-size: cover;
+    background-position: center;
+    filter: blur(2px);
+    z-index: -1;
+}
+
+.heading {
+    position: absolute;
+    color: white;
+    left: 10%;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.heading h1 {
+    font-size: 100px;
+    text-align: center;
+    margin-bottom: 5px;
+    animation: fadeInUp 1.5s ease;
+}
+
+.heading p {
+    font-size: 25px;
+    text-align: center;
+    bottom: 80%;
+    animation: fadeInUp 5s ease;
+}
+
+/* Animation Section */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Signup Form Styling */
+.signup-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+    /* background-image: url('../images/ChessHome.jpg'); */
+    /* Ensure this path is correct */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.signup-box {
+    width: 400px;
+    background-color: rgba(10, 10, 14);
+    /* Added transparency for better contrast */
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    color: white;
+    position: relative;
+    top: -50px;
+}
+
+.signup-box h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+form label {
+    display: block;
+    text-align: left;
+    margin: 10px 0 5px;
+    font-size: 0.9em;
+    color: #ccc;
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: #ccc;
+    font-size: 0.9em;
+}
+
+form .forgot-password {
+    display: block;
+    margin: 10px 0 20px;
+    font-size: 0.8em;
+    color: #a64eff;
+    text-decoration: none;
+}
+
+form .signInBtn,
+.sign-up-btn {
+    width: 75%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #c5001e;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-family: Optima;
+}
+
+form .signInBtn:hover {
+    background-color: #c5001e;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    min-width: 100px;
+    font-weight: bold;
+}
+
+.form-group select {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+}
+
+.sports-interests {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.sports-interests label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.navbar ul,
+.navbar ul a,
+.navbar ul li {
+    list-style: none;
+    color: white;
+    font-size: 25px;
+    text-decoration: none;
+    position: relative;
+    float: left;
+    margin-right: 50px;
+}
+
+.navbar ul a:hover {
+    color: #BABBBE;
+    text-decoration: underline;
+}
+
+.navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #252526ff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding-left: 10px 7%;
+}

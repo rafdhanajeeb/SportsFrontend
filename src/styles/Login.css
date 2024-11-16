@@ -1,0 +1,146 @@
+/* LoginPage.css */
+
+/*----------------------------------------------------------Logo and Button Styles------------------------------------------------------------*/
+.topbar img {
+    width: 50px;
+    height: 50px;
+    margin-right: 290px;
+    margin-left: 50px;
+    justify-content: left;
+}
+
+.btn,
+.bt2 {
+    align-self: center;
+}
+
+.btn button {
+    background-color: rgba(196, 0, 29, 0.8);
+    font-family: Optima;
+    border: none;
+    padding: 7px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 17px;
+    position: absolute;
+    right: 1%;
+    top: 1.3%;
+}
+
+.btn2 button {
+    background-color: rgb(197, 0, 30, 0.8);
+    font-family: Optima;
+    border: none;
+    padding: 7px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 17px;
+    position: absolute;
+    right: 8.5%;
+    top: 1.3%;
+}
+
+button:hover {
+    opacity: 75%;
+}
+
+/*----------------------------------------------------------Body-------------------------------------------------------------------------*/
+* {
+    font-family: Optima;
+}
+
+.login-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+    /* background-image: url('../images/ChessHome.jpg'); */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* background-color: black; */
+}
+
+.login-box {
+    width: 400px;
+    background-color: #0a0a0e;
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.login-box h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+form label {
+    display: block;
+    text-align: left;
+    margin: 10px 0 5px;
+    font-size: 0.9em;
+    color: #ccc;
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: #ccc;
+    font-size: 0.9em;
+}
+
+form .forgot-password {
+    display: block;
+    margin: 10px 0 20px;
+    font-size: 0.8em;
+    color: #a64eff;
+    text-decoration: none;
+}
+
+form .signInBtn {
+    width: 75%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #c5001e;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-family: Optima;
+}
+
+form .signInBtn:hover {
+    background-color: #a40018;
+}
+
+.sign-up {
+    margin-top: 20px;
+    font-size: 0.85em;
+    color: #ccc;
+}
+
+.sign-up a {
+    color: red;
+    text-decoration: none;
+}
+
+.sign-up a:hover {
+    text-decoration: underline;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
