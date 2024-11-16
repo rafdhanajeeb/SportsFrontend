@@ -7,16 +7,13 @@ const HomePage = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const handleLogout = () => {
-  // Clear user data and log out
-  setUserData(null);
-  setIsLoggedIn(false);
-  
-  // Clear data from localStorage
-  localStorage.removeItem('userData');
-  localStorage.setItem('isLoggedIn', 'false');
-  
-  alert('Logged out successfully!');
-};
+    // Clear user data and log out
+    setUserData(null);
+    setIsLoggedIn(false);
+    // Optionally, clear token from localStorage/sessionStorage if used
+    localStorage.removeItem('authToken'); 
+    alert('Logged out successfully!');
+  };
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -55,9 +52,14 @@ const HomePage = () => {
             </div>
           ) : (
             <div className="menu">
-              <a href="/login" className="login-btn">Login</a>
-              <a href="/signup" className="signup-btn">Signup</a>
-            </div>
+    <a href="/profile">
+      <img 
+        src='../images/profile.png'
+        alt="Profile" 
+        className="profile-image" 
+      />
+    </a>
+  </div>
           )}
         </div>
       </div>
@@ -78,39 +80,27 @@ const HomePage = () => {
                 <img src={require('../images/Checkers.png')} alt="Checkers" />
                 <p>Checkers</p>
             </div>
-            <div className="card">
-                <img src={require('../images/Tennis.png')} alt="Tennis" />
-                <p>Tennis</p>
-            </div>
+           
             <div className="card">
                 <img src={require('../images/Carrom.png')} alt="Carrom" />
                 <p>Carrom</p>
             </div>
-            <div className="card">
-                <img src={require('../images/Cricket.png')} alt="Cricket" />
-                <p>Cricket</p>
-            </div>
+    
             <div className="card">
                 <img src={require('../images/Netball.png')} alt="Netball" />
                 <p>Netball</p>
             </div>
-            <div className="card">
-                <img src={require('../images/Football.png')} alt="Football" />
-                <p>Football</p>
-            </div>
+        
             <div className="card">
                 <img src={require('../images/Badminton.png')} alt="Badminton" />
                 <p>Badminton</p>
             </div>
-            <div className="card">
-                <img src={require('../images/squash.png')} alt="Squash" />
-                <p>Squash</p>
-            </div>
+            
         </div>
 </div>
 
 
-        {/* <section className="training-videos">
+        <section className="training-videos">
           <h2>Training Videos</h2>
           <div className="video-cards"> 
             <div className="videos">
@@ -143,11 +133,7 @@ const HomePage = () => {
                 <a href="https://youtu.be/dgMA90Mj5jA?si=T5SSgy9Pk9DxQdUI">CLICK</a>
             </div>
 
-            <div className="videos">
-                <video src="../vdos/cricket.mp4" controls></video>
-                <p>Cricket basics: Batting techniques, bowling tips, and game strategies explained.</p>
-                <a href="https://youtu.be/KcNAG6gemEA?si=klNSBq7FM3AAz_RI">CLICK</a>
-            </div>
+            
 
             <div className="videos">
                 <video src="../vdos/Netball.mp4" controls></video>
@@ -155,11 +141,7 @@ const HomePage = () => {
                 <a href="https://youtu.be/XIHqHouUHoY?si=FpalLNyrP-VZillX">CLICK</a>
             </div>
 
-            <div className="videos">
-                <video src="../vdos/football.mp4" controls></video>
-                <p>Football fundamentals: Passing, shooting, and positioning explained in detail.</p>
-                <a href="https://youtu.be/bQT3MP5Moq8?si=CWnlXUF64G7w7GOX">CLICK</a>
-            </div>
+           
 
             <div className="videos">
                 <video src="../vdos/badminton.mp4" controls></video>
@@ -167,70 +149,26 @@ const HomePage = () => {
                 <a href="https://youtu.be/2cnbHARo8nI?si=UptcIC_unIhw2pD5">CLICK</a>
             </div>
 
-            <div className="videos">
-                <video src="../vdos/squash.mp4" controls></video>
-                <p>Elevate your Squash skills with footwork drills, serving techniques, and more.</p>
-                <a href="https://youtu.be/6QeinR2zjbA?si=uMJXHYpW2Pqn5jbj">CLICK</a>
-            </div>
+           
             </div>
 
-        </section> */}
-
-        <section className="personal-coaches">
-        <h2>Personal Coaches</h2>
-        <div className="coach-box-container">
-            <div className="coach-box">
-            <p><b>John Doe</b></p>
-            <p>Expert in Football and Basketball. Available for individual and group coaching sessions.</p>
-            <a href="https://www.chess.com/coaches">Book a session with John</a>
-            </div>
-            <div className="coach-box">
-            <p><b>Jane Smith</b></p>
-            <p>Specialized in Tennis and Cricket. Offering personal training sessions for all levels.</p>
-            <a href="/book-coach/jane-smith">Book a session with Jane</a>
-            </div>
-            <div className="coach-box">
-            <p><b>Mark Turner</b></p>
-            <p>Football, Basketball, and Netball coach. Available for team coaching.</p>
-            <a href="/book-coach/mark-turner">Book a session with Mark</a>
-            </div>
-            <div className="coach-box">
-            <p><b>Lisa Clark</b></p>
-            <p>Cricket and Tennis expert. Offering private coaching sessions.</p>
-            <a href="/book-coach/lisa-clark">Book a session with Lisa</a>
-            </div>
-            <div className="coach-box">
-            <p><b>Lisa Clark</b></p>
-            <p>Cricket and Tennis expert. Offering private coaching sessions.</p>
-            <a href="/book-coach/lisa-clark">Book a session with Lisa</a>
-            </div>
-            <div className="coach-box">
-            <p><b>Lisa Clark</b></p>
-            <p>Cricket and Tennis expert. Offering private coaching sessions.</p>
-            <a href="/book-coach/lisa-clark">Book a session with Lisa</a>
-            </div>
-            <div className="coach-box">
-            <p><b>Jane Smith</b></p>
-            <p>Specialized in Tennis and Cricket. Offering personal training sessions for all levels.</p>
-            <a href="/book-coach/jane-smith">Book a session with Jane</a>
-            </div>
-            <div className="coach-box">
-            <p><b>Mark Turner</b></p>
-            <p>Football, Basketball, and Netball coach. Available for team coaching.</p>
-            <a href="/book-coach/mark-turner">Book a session with Mark</a>
-            </div>
-            <div className="coach-box">
-            <p><b>Jane Smith</b></p>
-            <p>Specialized in Tennis and Cricket. Offering personal training sessions for all levels.</p>
-            <a href="/book-coach/jane-smith">Book a session with Jane</a>
-            </div>
-            <div className="coach-box">
-            <p><b>Mark Turner</b></p>
-            <p>Football, Basketball, and Netball coach. Available for team coaching.</p>
-            <a href="/book-coach/mark-turner">Book a session with Mark</a>
-            </div>
-        </div>
         </section>
+
+        <section class="personal-coaches">
+                <h2>Personal Coaches</h2>
+                <div class="coach-box-container">
+                    <div class="coach-box">
+                        <p><b>John Doe</b></p>
+                        <p>Expert in Basketball and Netball. Available for individual and group coaching sessions.</p>
+                        <p>+94 77 2468 101 | johndoe@gmail.com</p>
+                    </div>
+                    <div class="coach-box">
+                        <p><b>Jane Smith</b></p>
+                        <p>Specialized in Chess and Badminton. Offering personal training sessions for all levels.</p>
+                        <p>+94 77 1234 567 | jane97@gmail.com</p>
+                    </div> 
+                </div>
+            </section>
 
       </main>
 

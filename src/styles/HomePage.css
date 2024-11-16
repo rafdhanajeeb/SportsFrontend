@@ -1,38 +1,33 @@
-/* General Styles */
+ /*---------------------------------------------------Main Styles---------------------------------------------------------------*/
+ *{
+    font-family: Optima;
+}
+
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: black;
     color: #fff;
-}
+} 
 
-.header-background {
-    background-color: #ff9800;
-    padding: 80px;
-    text-align: center;
-    color: #fff;
-}
-
-.header-background h1 {
-    font-size: 3em;
-    margin: 0;
-}
+/*----------------------------------------------Navigation Bar Styles--------------------------------------------------------*/
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #241542;
+    background-color: #2d2d2d;
     padding: 10px 20px;
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 100;
+    z-index: 1000;
 }
 
 .navbar .menu a {
     text-decoration: none;
     color: white;
+    font-size: 23px;
     font-weight: bold;
     padding: 10px 15px;
     border-radius: 5px;
@@ -40,7 +35,7 @@ body {
 }
 
 .navbar .menu a:hover {
-    background-color: #7b5ead;
+    background-color: #c4001dcc;
 }
 
 .navbar .profile img {
@@ -50,117 +45,259 @@ body {
     margin-right: 50px;
 }
 
-.container {
-    width: 80%;
-    margin: 0 auto;
-    padding: 20px;
-    padding-top: 100px;
-    min-height: 80vh;
+.navbar .logo img {
+    width: 50px;
+    height: auto;
 }
 
-.section {
-    background-color: #f9f9f9;
-    padding: 15px;
-    margin: 15px 0;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+main {
+    margin-top: 115px;
+    padding: 2rem;
 }
 
-.profile-image-container {
+h2 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+/*----------------------------------------------Sport Groups Styles--------------------------------------------------------*/
+
+.sport-groups .sport-cards {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: #736b6b80;
+    border-radius: 10px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    border: 2px solid #c4001dcc;
+}
+
+.sport-cards::-webkit-scrollbar {
+    display: none;                 
+    
+}
+
+.card {
+    background-color: #13131379;
+    padding: 1rem;
+    border-radius: 10px;
+    min-width: 150px;
+    height: 150px;
+    text-align: center;
+    scroll-snap-align: start;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid rgb(106, 92, 92);                  
+}
+
+.card img {
+    width: 80px;
+}
+
+.card p {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(23, 23, 23, 0.3);
+}
+/*---------------------------------------------Training Videos Styles--------------------------------------------------------*/
+
+.training-videos {
+    margin-top: 2rem;
+    
+}
+
+.video-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-left: 0;
+    background-color: #2d2d2d;
+    padding: 2rem; 
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    border: 2px solid #c4001dcc;
+}
+
+.videos {
     display: flex;
     align-items: center;
-    margin-bottom: 15px;
+    gap: 1rem;
+     
 }
 
-.profile-image-container img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    margin-right: 20px;
-}
-.profile-dropdown {
-    position: relative;
-    display: inline-block;
+.videos video {
+    width: 300px;
+    height: auto;
 }
 
-.profile-img {
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-}
-
-.dropdown-menu {
-    position: absolute;
-    top: 100%;
-    min-width: fit-content;
-    right: 0;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 4px;
-    padding: 10px;
-    z-index: 100;
-}
-
-.dropdown-menu a,
-.dropdown-menu button {
-    display: block;
-    width: 100%;
-    padding: 8px;
-    text-align: left;
-    border: none;
-    background: none;
-    cursor: pointer;
-    color: #333;
-}
-
-.dropdown-menu a {
-    text-decoration: none;
-    /* Removes the underline */
-}
-
-.dropdown-menu a:hover,
-.dropdown-menu button:hover {
-    background-color: #cdcbe5;
-}
-
-label {
-    display: block;
-    margin: 10px 0 5px;
-    font-weight: bold;
-    color: #333;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="password"],
-select {
-    width: calc(100% - 2px);
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-button {
-    padding: 10px 20px;
-    background-color: #4CAF50;
+.videos p {
+    font-size: 1.2rem;
     color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    max-width: 400px;
 }
 
-button:hover {
-    background-color: #45a049;
+ /*---------------------------------------------Personal Coaches Styles--------------------------------------------------------*/
+
+
+.personal-coaches {
+    margin-top: 2rem;
+}
+
+.coach-box-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin: 0 auto;
+    max-width: 1200px;              
+}
+
+.coach-box {
+    background-color: #2d2d2d;
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid #c4001dcc;
+}
+
+.coach-box p {
+    font-size: 1.2rem;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.coach-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+.coach-box a {
+    text-decoration: none;
+    color: #c4001dcc;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.coach-box a:hover {
+    color: #f32525;
+}
+
+.coach-name {
+    color: rgb(113, 104, 102);
+}     
+/*---------------------------------------------Responsive Styles--------------------------------------------------------*/
+
+@media (max-width: 768px) {
+    .navbar ul {
+        text-align: center;
+        margin-top: 10px;
+    }
+    
+    .sport-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .card {
+        width: 90%;
+        margin-bottom: 10px;
+    }
+
+    .video-cards {
+        padding: 1rem;
+    }
+
+    .videos {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .videos video {
+        width: 100%;
+    }
+
+    .coach-box-container {
+        grid-template-columns: 1fr;
+    }
 }
 
 .footer {
-    background-color: #3f3d56;
+    background-color:  #2d2d2d;
     color: white;
     display: flex;
     justify-content: space-around;
     padding: 20px;
     margin-top: 20px;
 }
+
+
+.footer button {
+    background-color: #c4001dcc;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px; 
+}    
+
+.footer button :hover {
+    opacity: 75%;
+}
+
+@media (max-width: 768px) {
+    .navbar .menu a {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .navbar .logo img {
+        width: 40px;
+    }
+
+    .navbar .profile img {
+        width: 35px;
+        margin-right: 30px;
+    }
+
+    .coach-box-container {
+        grid-template-columns: 1fr 1fr; 
+    }
+
+    .coach-box {
+        padding: 1rem; 
+        width: 80%;
+    }
+
+    .coach-box p {
+        font-size: 0.9rem; 
+    }
+
+    .coach-box a {
+        font-size: 0.9rem; 
+    }
+}
+
+@media (max-width: 480px) {
+    .coach-box-container {
+        grid-template-columns: 1fr; 
+    }
+
+    .coach-box {
+        padding: 0.8rem; 
+    }
+
+    .coach-box p {
+        font-size: 0.85rem; 
+    }
+
+    .coach-box a {
+        font-size: 0.85rem; 
+    }
+} 
